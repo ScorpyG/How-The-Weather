@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Ubuntu:wght@500&display=swap" rel="stylesheet"> <!--Importing Custom Font-->
-
     <link rel="stylesheet" href="style.css"> <!--Linking css file to the webpage-->
     <link rel="icon" href="https://i.imgur.com/6ZLFKun.png"> <!--Webpage Initial-->
     
@@ -17,14 +16,24 @@
 <body>
     <div class="hero-image">
         <div class="hero-text">
-            <h1 style="font-size: 50px;">How's the weather?</h1>
-            <p style="font-size: 20px;">Type in the name of your city to check the time and weather.</p>
-            <!-- <p style="color: rgba(250, 250, 250, 0.6);">Inspired by Justin Nguyen</p> -->
+            <i class="fas fa-eye" style="font-size: 70px;"></i>
+            <h1 style="font-size: 50px; margin-top: 10px;">How's the weather?</h1>
+            <p style="font-size: 20px;">Type in the name of your city to check the weather.</p>
+    
+            <input type="text" class="search-box" placeholder="Enter city name...">
 
-            <input type="text" class="search-box" placeholder="Enter city name..."> <br>
-            <button><b>Check!</b></button>
+            <div class="location">
+                <div class="city"></div>
+                <div class="date"></div>
+            </div>
+            <div class="current">
+                <div class="temp"><span class="degree"></span></div>
+                <div class="weather"></div>
+                <div class="hi-low"></div>
+            </div>
         </div>
     </div>
-    <script>src="script.js"</script>
+
+    <script src="main.js"></script>
 </body>
 </html>

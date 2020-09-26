@@ -11,7 +11,7 @@ body, html {
 
 /*--------------------Hero Image--------------------*/
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('bg/chill.gif');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('bg/chill.gif');
     background-position: center;
     background-repeat: none;
     background-size: cover;
@@ -27,7 +27,6 @@ body, html {
     line-height: 40px;
 
     margin: auto;
-    transition-duration: 1s;
 }
 
 /*
@@ -38,7 +37,7 @@ body, html {
 .hero-text {
     padding: 20px;
 
-    background-color: rgba(100, 100, 100, 0.3);
+    background-color: rgba(100, 100, 100, 0.4);
 
     border: 1px solid rgb(255, 255, 255);
     border-radius: 4%;
@@ -47,15 +46,15 @@ body, html {
 }
 
 .hero-text:hover, .hero-text:focus {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 1);
 }
 
 .hero-text input {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
     font-size: 22px;
-    color: white;
+    color: rgb(0, 0, 0);
 
-    padding: 10px 15px;
+    padding: 5px 10px;
     margin: 10px 0 30px 0;
 
     border: none;
@@ -64,19 +63,56 @@ body, html {
 }
 
 ::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.hero-text input:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*--------------------Info Display--------------------*/
+.location .city {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.location .date {
     color: white;
+    font-size: 16px;
 }
 
-.hero-text button {
-    font-size: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    padding: 12px 25px;
-    margin-top: 10px;
-
-    transition-duration: 0.5s;
+.current .temp {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 102px;
+    margin: 30px 0px;
+    text-shadow: 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.hero-text button:hover {
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(0, 0, 0, 0.2);
+.degree {
+    font-weight: 300;
+    font-size: 55px;
+}
+
+.current .weather {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.3)
+}
+
+.current .hi-low {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    font-weight: 500;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.3)
+}
+
+.temp {
+    animation: flash;
+    animation-duration: 2s;
+    animation-delay: 3s;
 }
