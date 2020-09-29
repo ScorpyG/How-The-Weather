@@ -1,13 +1,13 @@
 const api = {
     key: "98f5321b281efe78f62746b1d3edc4bb",
-    data: "http://api.openweathermap.org/data/2.5/"
+    base: "https://api.openweathermap.org/data/2.5/"
 }
 
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
 function setQuery (event) {
-    if(event.keyCode ==13) {
+    if (event.keyCode == 13) {
         getResults(searchbox.value)
     }
 }
@@ -31,7 +31,7 @@ function dateBuilder(d) {
     let month = months[d.getMonth()];
     let year = d.getFullYear();
 
-    return `${day} ${month} ${date}, ${year}`
+    return `${day}, ${month} ${date}, ${year}`
 }
 
 function displayResults(weather) {
