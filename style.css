@@ -29,17 +29,12 @@ body, html {
     margin: auto;
 }
 
-/*
-.hero-image:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg/chill.gif');
-} */
-
 .hero-text {
     padding: 20px;
 
-    background-color: rgba(100, 100, 100, 0.4);
+    background-color: rgba(90, 90, 90, 0.4);
 
-    border: 1px solid rgb(255, 255, 255);
+    border: 0px solid rgb(255, 255, 255);
     border-radius: 4%;
 
     transition-duration: 0.5s;
@@ -48,18 +43,26 @@ body, html {
 .hero-text:hover, .hero-text:focus {
     box-shadow: 0 0 100px rgba(0, 0, 0, 1);
 }
-
+.hero-text p {
+    margin: 10px;
+}
 .hero-text input {
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 22px;
     color: rgb(0, 0, 0);
 
     padding: 5px 10px;
-    margin: 10px 0 30px 0;
+    margin: 10px 0 10px 0;
 
     border: none;
     outline: none;
     border-radius: 10px;
+}
+
+#unit-cb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }
 
 ::placeholder {
@@ -68,6 +71,23 @@ body, html {
 
 .hero-text input:focus {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*---------------------Animations---------------------*/
+.hero-text i {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: zoom;
+}  
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 /*--------------------Info Display--------------------*/

@@ -12,8 +12,29 @@ function setQuery (event) {
     }
 }
 
+
+function toggleUnits() {
+    let checkBox = document.getElementById('unit-cb');
+    if (checkBox.checked == true) {
+        return result = "imperial";
+    }
+    else {
+        return result = "metric";
+    }
+} 
+
+function toggleSym() {
+    let checkBox = document.getElementById('unit-cb');
+    if (checkBox.checked == true) {
+        return symbol = "°F";
+    }
+    else {
+        return symbol = "°C";
+    }
+} 
+
 function getResults(query) {
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+    fetch(`${api.base}weather?q=${query}&units=${toggleUnits()}&APPID=${api.key}`)
         .then(weather => {
             return weather.json();
         }).then(displayResults);
@@ -43,11 +64,11 @@ function displayResults(weather) {
     date.innerText = dateBuilder(now);
 
     let temp = document.querySelector('.current .temp');
-    temp.innerHTML = `${Math.round(weather.main.temp)}°C`;
+    temp.innerHTML = `${Math.round(weather.main.temp)}${toggleSym()}`;
 
     let weather_el=document.querySelector('.current .weather');
     weather_el.innerText = weather.weather[0].main;
 
     let hilow = document.querySelector('.hi-low')
-    hilow.innerText = `${Math.round(weather.main.temp_min)}°C / ${Math.round(weather.main.temp_max)}°C`
+    hilow.innerText = `${Math.round(weather.main.temp_min)}${toggleSym()} / ${Math.round(weather.main.temp_max)}${toggleSym()}`
 }
