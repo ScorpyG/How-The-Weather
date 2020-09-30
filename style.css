@@ -38,6 +38,10 @@ body, html {
     border-radius: 4%;
 
     transition-duration: 0.5s;
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: zoom;
 }
 
 .hero-text:hover, .hero-text:focus {
@@ -75,10 +79,24 @@ body, html {
 
 /*---------------------Animations---------------------*/
 .hero-text i {
+    font-size: 70px;
     animation-duration: 1s;
+    transition-duration: 0.5s;
     animation-fill-mode: both;
     animation-name: zoom;
 }  
+
+.hero-text h1 {
+    font-size: 50px; 
+    margin-top: 15px; 
+    margin-bottom: 20px;
+    transition-duration: 0.5s;
+}
+
+.hero-text p {
+    font-size: 20px;
+    transition-duration: 0.5s;
+}
 
 @keyframes zoom {
     from {
@@ -135,4 +153,11 @@ body, html {
     animation: flash;
     animation-duration: 2s;
     animation-delay: 3s;
+}
+
+/*---------------------Responsive---------------------*/
+@media screen and (max-width: 450px) {
+    .hero-text {
+        margin: 10px;
+    }
 }
