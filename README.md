@@ -7,3 +7,5 @@ Used Resources for the project:
 
 With the used of OpenWeatherMap API I pull the nessary information like (temperature, location and the weather)
 Additional resource like current time of input location with be added in the future
+
+Computer is recommended for best viewing experience
