@@ -65,11 +65,7 @@ function dateBuilder(d) {
 function displayResults(weather) {
     // Requested data for searched location
     let city = document.querySelector('.location .city');
-    try {
-    city.innerText = `${weather.name}, ${weather.sys.country}`; }
-    catch { 
-        alert ("This doesn't work");
-    }
+    city.innerText = `${weather.name}, ${weather.sys.country}`;
 
     // Set current date/time
     let now = new Date();
