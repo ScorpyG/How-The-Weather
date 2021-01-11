@@ -44,9 +44,9 @@ function getResults(query) {
             // return and display the results
             return weather.json(); 
         }).then(displayResults);
-        else  {
+        else {
             alert ("this doesn't work, check your shit!");
-    }
+        }
     console.log(query)
 }
 
