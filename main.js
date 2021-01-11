@@ -13,6 +13,9 @@ function setQuery (event) {
     if (event.keyCode == 13) {
         getResults(searchbox.value)
     }
+    else  {
+        alert ("this doesn't work, check your shit!");
+    }
 }
 
 // Toggle between °C / °F measurements
