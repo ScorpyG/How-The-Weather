@@ -13,9 +13,6 @@ function setQuery (event) {
     if (event.keyCode == 13) {
         getResults(searchbox.value)
     }
-    else  {
-        alert ("this doesn't work, check your shit!");
-    }
 }
 
 // Toggle between °C / °F measurements
@@ -47,6 +44,9 @@ function getResults(query) {
             // return and display the results
             return weather.json(); 
         }).then(displayResults);
+        else  {
+            alert ("this doesn't work, check your shit!");
+    }
     console.log(query)
 }
 
