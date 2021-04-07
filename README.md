@@ -9,4 +9,4 @@ With the used of OpenWeatherMap API I pull the nessary information like (tempera
 Additional resource like current time of input location with be added in the future
 
 Computer is recommended for best viewing experience
--> https://scorpyg.github.io/How-The-Weather/
+-> <a href="https://scorpyg.github.io/How-The-Weather/"> Here </a>
