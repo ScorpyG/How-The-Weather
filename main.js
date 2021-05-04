@@ -1,12 +1,15 @@
 // API info & access key
-const api = {
-    key: "98f5321b281efe78f62746b1d3edc4bb",
+/* const api = {
+    key: process.env.API_KEY,
     base: "https://api.openweathermap.org/data/2.5/"
-}
+} */
+
+const weather_URL = "https://api.openweathermap.org/data/2.5/";
+var key = config.API_KEY;
 
 // Fetching data function from the API
 function getResults(query) {
-    fetch(`${api.base}weather?q=${query}&units=${toggleUnits()}&APPID=${api.key}`)
+    fetch(`${weather_URL}weather?q=${query}&units=${toggleUnits()}&APPID=${key}`)
         .then(weather => {
             // return and display the results
             return weather.json(); 
@@ -46,6 +49,29 @@ function toggleSym() {
         return symbol = "°C";
     }
 } 
+
+// Display the requested results in HTML page
+function displayResults(weather) {
+    // Requested data for searched location
+    let city = document.querySelector('.location .city');
+    try {
+        city.innerText = `${weather.name}, ${weather.sys.country}`;
+    } catch {
+        alert ("Your city name is unavaliable. Please check your spelling!");
+    }
+
+    // Set current temp
+    let temp = document.querySelector('.current .temp');
+    temp.innerHTML = `${Math.round(weather.main.temp)}${toggleSym()}`;
+    
+    // Set current weather
+    let weather_el=document.querySelector('.current .weather');
+    weather_el.innerText = weather.weather[0].main;
+
+    // Set high and low temp
+    let hilow = document.querySelector('.hi-low')
+    hilow.innerText = `${Math.round(weather.main.temp_min)}${toggleSym()} / ${Math.round(weather.main.temp_max)}${toggleSym()}`
+}
 
 // Building date function with months and days array
 function dateBuilder(d) {
@@ -87,26 +113,3 @@ function checkTime(i) {
     };  // add zero in front of numbers < 10
     return i;
 } 
-
-// Display the requested results in HTML page
-function displayResults(weather) {
-    // Requested data for searched location
-    let city = document.querySelector('.location .city');
-    try {
-        city.innerText = `${weather.name}, ${weather.sys.country}`;
-    } catch {
-        alert ("Your city name is unavaliable. Please check your spelling!");
-    }
-
-    // Set current temp
-    let temp = document.querySelector('.current .temp');
-    temp.innerHTML = `${Math.round(weather.main.temp)}${toggleSym()}`;
-    
-    // Set current weather
-    let weather_el=document.querySelector('.current .weather');
-    weather_el.innerText = weather.weather[0].main;
-
-    // Set high and low temp
-    let hilow = document.querySelector('.hi-low')
-    hilow.innerText = `${Math.round(weather.main.temp_min)}${toggleSym()} / ${Math.round(weather.main.temp_max)}${toggleSym()}`
-}
