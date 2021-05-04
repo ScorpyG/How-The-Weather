@@ -48,7 +48,7 @@ function getResults(query) {
 }
 
 // Building date function with months and days array
-function dateBuilder(d) {
+/* function dateBuilder(d) {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       
@@ -59,7 +59,27 @@ function dateBuilder(d) {
     
     //return the date for the program
     return `${day}, ${month} ${date}, ${year}`
+} */
+
+// Create current time info
+/* function startClock() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(startClock, 500);
 }
+
+// Zero at the end of each clock rotation
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i
+    };  // add zero in front of numbers < 10
+    return i;
+} */
 
 // Display the requested results in HTML page
 function displayResults(weather) {
@@ -71,10 +91,10 @@ function displayResults(weather) {
         alert ("Your city name is unavaliable. Please check your spelling!");
     }
     
-    // Set current date/time
+    /* Set local date/time
     let now = new Date();
     let date = document.querySelector('.location .date');
-    date.innerText = dateBuilder(now);
+    date.innerText = dateBuilder(now); */
 
     // Set current temp
     let temp = document.querySelector('.current .temp');

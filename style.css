@@ -116,7 +116,7 @@ body, html {
     margin-bottom: 5px;
 }
 
-.location .date {
+.location .date, .location #clock {
     color: white;
     font-size: 16px;
 }
