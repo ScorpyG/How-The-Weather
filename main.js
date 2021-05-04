@@ -4,6 +4,16 @@ const api = {
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
+// Fetching data function from the API
+function getResults(query) {
+    fetch(`${api.base}weather?q=${query}&units=${toggleUnits()}&APPID=${api.key}`)
+        .then(weather => {
+            // return and display the results
+            return weather.json(); 
+        }).then(displayResults);
+    console.log(query)
+}
+
 // Event function for search request
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
@@ -37,18 +47,8 @@ function toggleSym() {
     }
 } 
 
-// Fetching data function from the API
-function getResults(query) {
-    fetch(`${api.base}weather?q=${query}&units=${toggleUnits()}&APPID=${api.key}`)
-        .then(weather => {
-            // return and display the results
-            return weather.json(); 
-        }).then(displayResults);
-    console.log(query)
-}
-
 // Building date function with months and days array
-/* function dateBuilder(d) {
+function dateBuilder(d) {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       
@@ -59,17 +59,24 @@ function getResults(query) {
     
     //return the date for the program
     return `${day}, ${month} ${date}, ${year}`
-} */
+}
+
+// Set local date/time
+let now = new Date();
+let date = document.querySelector('#date');
+let time = document.querySelector('#clock');
+time.innerText = startClock(now);
+date.innerHTML = dateBuilder(now); 
 
 // Create current time info
-/* function startClock() {
+function startClock() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+    document.querySelector('#clock').innerHTML = h + ":" + m + ":" + s;
     var t = setTimeout(startClock, 500);
 }
 
@@ -79,7 +86,7 @@ function checkTime(i) {
         i = "0" + i
     };  // add zero in front of numbers < 10
     return i;
-} */
+} 
 
 // Display the requested results in HTML page
 function displayResults(weather) {
@@ -90,11 +97,6 @@ function displayResults(weather) {
     } catch {
         alert ("Your city name is unavaliable. Please check your spelling!");
     }
-    
-    /* Set local date/time
-    let now = new Date();
-    let date = document.querySelector('.location .date');
-    date.innerText = dateBuilder(now); */
 
     // Set current temp
     let temp = document.querySelector('.current .temp');

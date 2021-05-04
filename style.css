@@ -116,9 +116,10 @@ body, html {
     margin-bottom: 5px;
 }
 
-.location .date, .location #clock {
+#date, #clock {
+    margin: auto;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .current .temp {
