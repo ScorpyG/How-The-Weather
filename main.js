@@ -1,9 +1,4 @@
 // API info & access key
-/* const api = {
-    key: process.env.API_KEY,
-    base: "https://api.openweathermap.org/data/2.5/"
-} */
-
 const weather_URL = "https://api.openweathermap.org/data/2.5/";
 var key = config.API_KEY;
 
