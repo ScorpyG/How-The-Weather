@@ -60,8 +60,12 @@ function displayResults(weather) {
     temp.innerHTML = `${Math.round(weather.main.temp)}${toggleSym()}`;
     
     // Set current weather
-    let weather_el=document.querySelector('.current .weather');
-    weather_el.innerText = weather.weather[0].main;
+    let weather_el = document.querySelector('.current .weather');
+    weather_el.innerHTML = weather.weather[0].main;
+
+    // Set current weather icon
+    let weather_icon = document.querySelector("#weather_icon");
+    weather_icon.src = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 
     // Set high and low temp
     let hilow = document.querySelector('.hi-low')
